@@ -1,6 +1,6 @@
 package com.rroggia.tddbyexample.financial;
 
-public class Dollar extends Money{
+public class Dollar extends Money {
 
 	public Dollar(int amount) {
 		this.amount = amount;
@@ -10,9 +10,4 @@ public class Dollar extends Money{
 		return new Dollar(this.amount * multiplier);
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		Money money = (Money) obj;
-		return this.amount == money.amount;
-	}
 }
