@@ -13,6 +13,8 @@ public abstract class Money {
 		return new Dollar(amount);
 	}
 
+	public abstract String currency();
+
 	public abstract Money times(int i);
 
 	public static Money franc(int amount) {
