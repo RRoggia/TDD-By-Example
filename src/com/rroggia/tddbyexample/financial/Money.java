@@ -21,7 +21,7 @@ public abstract class Money {
 	public abstract Money times(int i);
 
 	public static Money franc(int amount) {
-		return new Franc(amount);
+		return new Franc(amount, "CHF");
 	}
 
 }
