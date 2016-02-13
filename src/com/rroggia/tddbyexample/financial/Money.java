@@ -2,6 +2,7 @@ package com.rroggia.tddbyexample.financial;
 
 public abstract class Money {
 	protected int amount;
+	protected String currency;
 
 	@Override
 	public boolean equals(Object obj) {
@@ -13,7 +14,9 @@ public abstract class Money {
 		return new Dollar(amount);
 	}
 
-	public abstract String currency();
+	public String currency() {
+		return currency;
+	}
 
 	public abstract Money times(int i);
 
