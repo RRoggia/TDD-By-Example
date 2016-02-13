@@ -1,6 +1,6 @@
 package com.rroggia.tddbyexample.financial;
 
-public class Money {
+public abstract class Money {
 	protected int amount;
 
 	@Override
@@ -12,5 +12,7 @@ public class Money {
 	public static Dollar dollar(int amount) {
 		return new Dollar(amount);
 	}
+
+	public abstract Money times(int i);
 
 }
