@@ -30,5 +30,9 @@ public class Money {
 	public static Money franc(int amount) {
 		return new Franc(amount, "CHF");
 	}
+	
+	public String toString(){
+		return amount + " " + currency;
+	}
 
 }
