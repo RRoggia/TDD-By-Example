@@ -1,10 +1,10 @@
 package com.rroggia.tddbyexample.financial;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-
-import com.sun.org.apache.regexp.internal.REDebugCompiler;
 
 public class MoneyTest {
 
@@ -70,8 +70,18 @@ public class MoneyTest {
 	}
 
 	@Test
-	public void testIdentityRate (){
-		assertEquals(1, new Bank().rate("USD","USD"));
+	public void testIdentityRate() {
+		assertEquals(1, new Bank().rate("USD", "USD"));
+	}
+
+	@Test
+	public void testMixedAddition() {
+		Expression fiveBucks = Money.dollar(5);
+		Expression tenFrancs = Money.franc(10);
+		Bank bank = new Bank();
+		bank.addRate("CHF", "USD", 2);
+		Money result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
+		assertEquals(Money.dollar(10), result);
 	}
 
 }
