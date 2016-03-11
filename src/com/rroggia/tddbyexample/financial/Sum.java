@@ -2,8 +2,8 @@ package com.rroggia.tddbyexample.financial;
 
 public class Sum implements Expression {
 
-	public Money augend;
-	public Money addend;
+	public Expression augend;
+	public Expression addend;
 
 	public Sum(Money augend, Money addend) {
 		this.augend = augend;
